@@ -1,0 +1,1500 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- remix icon -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/> 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<style>
+    .ticker {
+         position: fixed;
+         bottom: 0;
+         width: 100%;
+         color: #fff;
+         overflow: hidden;
+         white-space: nowrap;
+       }
+       .ticker-text {
+         display: inline-block;
+         padding-left: 100%;
+         animation: ticker 15s linear infinite;
+       }
+       @keyframes ticker {
+         from { transform: translateX(100%); }
+         to { transform: translateX(-100%); }
+       }
+       .menu-option:hover, .menu-option.active {
+         color: #FFD700; 
+         transition: ease-in 0.4s;
+       }
+       html{
+           scroll-behavior: smooth;
+       }
+       nav.scrolled{
+        transition: ease-in 1s;
+        z-index: 1000;
+     
+}
+
+       .fall-in {
+           animation: fall-in 1s ease-out;
+       }
+       @keyframes fall-in {
+           0% {
+               opacity: 0;
+               transform: translateY(-20px);
+           }
+           100% {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+       .slide-in {
+           animation: slide-in 1s ease-out;
+       }
+       @keyframes slide-in {
+           0% {
+               opacity: 0;
+               transform: translateX(100px);
+           }
+           100% {
+               opacity: 1;
+               transform: translateX(0);
+           }
+       }
+       .zoom-out {
+           transition: transform 0.8s ease; 
+       }
+       .zoom-out:hover {
+           transform: scale(0.98); 
+           overflow: hidden;
+       }
+       .fade-in {
+           animation: fadeIn 1s ease-in-out;
+       }
+       @keyframes fadeIn {
+           from {
+               opacity: 0;
+               transform: translateY(20px);
+           }
+           to {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+       .lux:focus{
+           background-color: #DAA520;
+       }
+       .vintage {
+           transition: transform 0.3s ease-in-out;
+       }
+       .box-hover {
+           position: relative;
+           overflow: hidden;
+       }
+
+       .box-hover-icons {
+           position: absolute;
+           top: 50%;
+           right: -100%;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           transition: right 0.3s ease;
+       }
+
+       .box-hover:hover .box-hover-icons {
+           right: 10%;
+       }
+       .animate-fade-in {
+     animation: fade-in 2s ease-in-out forwards;
+   }
+
+   .animate-slide-up {
+     animation: slide-up 2s ease-in-out forwards;
+   }
+
+   @keyframes fade-in {
+     from {
+       opacity: 0;
+     }
+
+     to {
+       opacity: 1;
+     }
+   }
+
+   @keyframes slide-up {
+     from {
+       transform: translateY(50px);
+       opacity: 0;
+     }
+
+     to {
+       transform: translateY(0);
+       opacity: 1;
+     }
+   }
+   .animate-slide-in-right {
+     animation: slide-in-right 0.5s ease-in-out forwards;
+   }
+
+   .animate-slide-up {
+     animation: slide-up 1s ease-in-out forwards;
+   }
+
+   @keyframes slide-in-right {
+     from {
+       transform: translateX(100%);
+       opacity: 0;
+     }
+
+     to {
+       transform: translateX(0);
+       opacity: 1;
+     }
+   }
+
+   @keyframes slide-up {
+     from {
+       transform: translateY(50px);
+       opacity: 0;
+     }
+
+     to {
+       transform: translateY(0);
+       opacity: 1;
+     }
+   }
+   .animate-slide-in {
+           animation: slide-in 0.5s ease-in-out forwards;
+       }
+
+       @keyframes slide-in {
+           from {
+               transform: translateY(20px);
+               opacity: 0;
+           }
+
+           to {
+               transform: translateY(0);
+               opacity: 1;
+           }
+       }
+
+       .cart-modal {
+           animation: fadeIn 0.3s ease-in-out forwards;
+       }
+
+       @keyframes fadeIn {
+           from {
+               opacity: 0;
+           }
+
+           to {
+               opacity: 1;
+           }
+       }
+       .gallery-container {
+           display: flex;
+           overflow: hidden;
+           width: 100%;
+       }
+       .gallery-slide {
+           flex-shrink: 0;
+           width: 100%;
+           transition: transform 1s ease-in-out;
+       }
+       .watch {
+    
+     position: relative;
+     animation: moveUpDown 3s ease-in-out infinite alternate;
+   }
+       @keyframes moveUpDown {
+     0% {
+       transform: translateY(0);
+     }
+     100% {
+       transform: translateY(-40px); 
+     }
+   }
+   .footer-link:hover {
+           color: #FFD700; /* Tailwind Blue-600 */
+           transition: color 0.3s ease-in-out;
+       }
+       .footer-heading {
+           font-size: 1.25rem; /* 20px */
+       }
+       .footer-subheading {
+           font-size: 1rem; /* 16px */
+       }
+
+   
+    .loader{
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100vh;
+       display: flex;
+       justify-content: center;
+       opacity: 70;
+       align-items: center;
+       background-color: #f7f9fb;
+       transition: opacity 0.75s, visibility 0.75s;
+    }
+    .loader-hidden{
+       opacity: 0;
+       visibility: hidden;
+      
+    }
+    .loader::after{
+       content: " ";
+       width: 75px;
+       height: 75px;
+       border: 15px solid #dddddd;
+       border-top-color: #05020B;
+       border-radius: 50%;
+       animation: loading 0.75s ease infinite;
+    }
+    @keyframes loading{
+       from{
+           transform: rotate(0turn);
+       }
+       to{
+           transform: rotate(1turn);
+       }
+    }
+    .june:focus{
+        color: #DAA520;
+    }
+  
+</style>
+
+
+<body>
+
+    <!--======================== navbar============= -->
+
+    <nav class="scrolled bg-primary  text-white fixed top-0 left-0 w-[100%] z-50 border-b border-secondary" id="navbar">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="image/logo3.png" class="h-10 flex justify-center items-center"  alt="Alberto logo"/>
+              <span class="self-center text-[1.1rem] font-semibold whitespace-nowrap dark:text-white animate-pulse">ALBERTO WATCH COMPANY</span>
+              <div id="visitorCount" class="text-white md:flex hidden">Visitors: 0</div>
+          </a>
+          <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100   md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+              <li>
+                <a href="#home" class="menu-option block py-2 px-3 text-white  rounded   md:p-0 " aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="menu-option block py-2 px-3 md:border-0  md:p-0 ">About</a>
+              </li>
+
+              <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3   md:p-0 md:w-auto"><a href="#product">Products</a><svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+      </svg></button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar" class="z-10 hidden font-normal bg-primary  divide-y divide-gray-100 rounded-lg shadow w-44 text-white">
+                    <ul class="py-2 text-sm " aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <a href="#technology" class="block px-4 py-2 ">Technology</a>
+                      </li>
+                      <li>
+                        <a href="#store" class="block px-4 py-2 ">Store</a>
+                      </li>
+                      <li>
+                        <a href="#support" class="block px-4 py-2 ">Support</a>
+                      </li>
+                    </ul>
+                    <div class="py-1">
+                      <a href="#site-map" class="block px-4 py-2 text-sm">Site map</a>
+                    </div>
+                </div>
+            </li>
+           
+              <li>
+                <a href="#gallery" class="menu-option block py-2 px-3 md:border-0  md:p-0 ">Gallery</a>
+              </li>
+              <li>
+                <a href="#contact us" class="menu-option block py-2 px-3 md:border-0  md:p-0 ">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <section class="font-mont bg-primary" id="home" >
+        <div class="background h-screen text-white flex items-center justify-center overflow-hidden">
+            <div class="container mx-auto p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-center h-full pt-20 md:pt-0">
+              <!-- Image Div -->
+              <div id="imageContainer" class="w-full md:w-1/2 p-4 flex items-center justify-center h-full slide-in order-1 md:order-2">
+                <img id="watchImage" src="image/background1.png" alt="Watch" class="object-cover rounded-lg shadow-md w-full h-auto">
+              </div>
+              <!-- Text Div -->
+              <div id="textContainer" class="w-full md:w-1/2 p-4 flex flex-col items-center justify-center text-start md:text-left h-full fall-in order-2 md:order-1">
+                <div class="md:ml-10">
+                  <h1 id="headline" class="text-3xl md:text-5xl font-bold mb-4">Welcome to Alberto Watch Company</h1>
+                  <p id="description" class="text-lg md:text-xl mb-4">Discover the finest watches crafted with precision and elegance.</p>
+                  <button class="bg-primary text-white py-3 px-8 rounded-md hover:bg-secondary transition ease-in-out duration-300 border border-secondary">
+                    <a href="#product">View Product</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        
+      </section>
+
+      
+
+              <!--============== section 1================= -->
+              <section class="flex font-mont">
+                <div class="grid grid-cols-12  w-[100%] gap-6 overflow-hidden">
+                    <div class="shadow-lg  p-6 md:col-span-6 col-span-12 h-[100%] relative overflow-hidden">
+                        <div class="zoom-out flex justify-center items-center w-[100%] h-[100%] overflow-hidden"><img src="image/image1.jpg" alt="" class="zoom-out object-cover">
+                            <div class="absolute text-white w-[100%] h-[100%] flex flex-col justify-center items-center">
+                                <p>SALE UP TO 30% OFF</p>
+                                <p class="uppercase text-4xl tracking-widest my-4">NEW ARRIVALS</p>
+                                <button class="uppercase px-6 py-2 border-2 border-white mt-4">Shop collection</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative shadow-lg p-6 md:col-span-6  col-span-12 h-[100%] flex flex-col gap-8">
+                        <div class="w-[100%] shadow-md md:row-span-6 row-span-12 h-[100%]">
+                            <div class="flex justify-start items-center w-[100%] h-[100%] "><img src="image/image1a.jpg" alt="" class="w-[100%] h-[100%]">
+                                <div class=" flex flex-col items-center justify-start  absolute ml-14">
+                                    <p class="mb-4 font-semibold text-2xl uppercase">DRESS WATCHES</p>
+                                    <p class="text-gray-500 text-sm pb-2 border-b border-black"><a href="#product">Shop now</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[100%] shadow-md md:row-span-6 row-span-12 h-[100%] flex md:flex-row flex-col gap-6 py-6 px-4">
+                            <div class="relative lg:col-span-6 col-span-12 h-[100%] lg:w-[50%] w-[100%] shadow-lg">
+                                <div class="flex justify-start items-center w-[100%] h-[100%]"><img src="image/image1b.jpg" alt="">
+                                    <div class="absolute p-2">
+                                        <p class="text-secondary font-medium mb-4">From $300</p>
+                                        <p class="text-black lg:text-2xl text-xl font-light">Tommy Hilfiger <br>
+                                            Silver bracelet watch</p>
+                                            <p class="text-gray-500 text-sm pb-2 border-b border-gray-600 mt-3 w-[70px]"><a href="#product">Shop now</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" relative lg:col-span-6 col-span-12 h-[100%] lg:w-[50%] w-[100%] shadow-lg">
+                                <div class="flex justify-start items-center w-[100%] h-[100%]"><img src="image/image1c.jpg" alt="">
+                                    <div class="absolute p-2">
+                                        <p class="text-secondary font-medium mb-4">From $300</p>
+                                        <p class="text-black lg:text-2xl text-xl font-light">Sekonda <br>
+                                            bracelet watch</p>
+                                            <p class="text-gray-500 text-sm pb-2 border-b border-gray-600 mt-3 w-[70px]"><a href="#product">Shop now</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </section>
+              <!--============== section 1================= -->
+
+              <!-- =================section 2  the about section============= -->
+               <section class="my-10 font-mont md:px-16 sm:px-2 " id="about">
+                <div>
+                    
+    <!-- Header Section -->
+    <header class="hero flex items-center justify-center overflow-hidden">
+        <div class="text-black p-4 rounded-lg text-center">
+            <h1 class="text-5xl font-bold" data-aos="fade-up"
+            data-aos-duration="2000">Alberto Watch Company</h1>
+            <p class="text-xl mt-4" data-aos="fade-up"
+            data-aos-duration="2500">Timeless Elegance. Unmatched Quality.</p>
+        </div>
+    </header>
+
+                    <div class="grid grid-cols-12 p-8 my-6 lg:gap-2 gap-6 bg-primary font-mont mb-6">
+                        <div class="lg:col-span-6 col-span-12">
+                            
+                            <div class=" px-4 md:px-8 text-center text-white">
+                                <h2 class="text-4xl font-bold mb-4 text-secondary">About Us</h2>
+                                <p class=" text-justify">Founded in 2020, Alberto Watch Company has been crafting timeless pieces that combine tradition and innovation. Our dedication to craftsmanship and quality ensures each watch is a work of art, designed to last for generations.</p>
+                            </div>
+                            <div class="ml-2">
+                                <h2 class="text-2xl font-bold mb-3 text-center">Contact Us</h2>
+                                
+                                <div class="mb-4">
+                                    <p class="text-white"><strong>Email:</strong> contact@albertowatch.com</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <p class="text-white"><strong>Address:</strong> 123 Watchmaker Street, Lagos, Nigeria</p>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <p class="text-white"><strong>Phone:</strong> +234 123 456 7890</p>
+                                </div>
+                                
+                                <div class="">
+                                    <button class="bg-secondary text-black px-6 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition duration-300">
+                                       <a href="#product"> View Our Products</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-6 col-span-12 w-[100%] ">
+                            <div class="h-[100%] w-[100%] justify-center items-end my-auto"><img src="image/about1.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    
+             
+
+                    <!-- =====================our feuatures================= -->
+                     <div class="md:px-10 px-2 mt-8">
+                        <div class="pt-6">
+                            <p class="font-bold text-center text-3xl " data-aos="fade-up"
+                            data-aos-duration="2000">Some Features that Made us Unique</p>
+                            <p class="my-3 text-xl font-light text-center"data-aos="fade-up"
+                            data-aos-duration="2500">Discover the exceptional craftsmanship and innovative design that set <br> our watches apart.</p>
+                        </div>
+                        <div class="grid grid-cols-12 gap-8 my-6 lg:px-16 px-2 ">
+                            <div class="md:col-span-6 lg:col-span-4 col-span-12 leading-relaxed py-6 rounded-md shadow-lg  flex flex-col  hover:shadow-secondary hover:-bottom-8 ease-in duration-100 px-6">
+                              <div class="flex justify-start gap-4 items-center ml-6 mb-2">
+                                <div><i class="fas fa-star text-3xl font-light text-secondary"></i></div>
+                                <h3 class="text-xl font-bold">Quality</h3>
+                              </div>
+                                <p class="ml-6">We use only the finest materials to ensure the highest quality for every watch we create.</p>
+                            </div>
+                            <div class="md:col-span-6 lg:col-span-4 col-span-12 leading-relaxed py-6 rounded-md shadow-lg  hover:shadow-secondary hover:-bottom-8 ease-in duration-100  flex flex-col px-6">
+                               <div class="flex items-center justify-start gap-4 ml-6 mb-2">
+                                <div><i class="fas fa-tools font-light text-3xl text-secondary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Craftsmanship</h3>
+                               </div>
+                                <p class="ml-6">Our skilled artisans handcraft each watch with meticulous attention to detail.</p>
+                            </div>
+
+                            <div class="md:col-span-6 lg:col-span-4 col-span-12 leading-relaxed py-6 rounded-md shadow-lg hover:shadow-secondary hover:-bottom-8 ease-in duration-100  flex flex-col px-6">
+                              <div class="flex justify-start gap-4 ml-6 mb-2 items-center">
+                                <div><i class="fas fa-lightbulb font-light text-3xl text-secondary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Innovation</h3>
+                              </div>                           
+                                <p class="ml-6">We continually innovate to blend traditional techniques with modern technology.</p>
+                            </div>
+                       
+                      
+                            <div class="md:col-span-6 lg:col-span-4 col-span-12 leading-relaxed py-6 rounded-md shadow-lg  flex flex-col  hover:shadow-secondary hover:-bottom-8 ease-in duration-100 px-6">
+                              <div class="flex justify-start gap-4 items-center ml-6 mb-2">
+                                <div><i class="fas fa-gem font-light text-3xl text-secondary"></i></div>
+                                <h3 class="text-xl font-bold">Luxury Materials</h3>
+                              </div>
+                                <p class="ml-6">We use only the finest materials to ensure the highest quality for every watch we create.</p>
+                            </div>
+                            <div class="md:col-span-6 lg:col-span-4 col-span-12 leading-relaxed py-6 rounded-md shadow-lg  hover:shadow-secondary hover:-bottom-8 ease-in duration-100  flex flex-col px-6">
+                               <div class="flex items-center justify-start gap-4 ml-6 mb-2">
+                                <div><i class="fas fa-hourglass-half font-light text-3xl text-secondary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Timeless Aesthetics</h3>
+                               </div>
+                                <p class="ml-6">Our designs are inspired by timeless elegance, making each watch a sophisticated accessory that never goes out of style.</p>
+                            </div>
+
+                            <div class="md:col-span-6 lg:col-span-4 col-span-12 leading-relaxed py-6 rounded-md shadow-lg hover:shadow-secondary hover:-bottom-8 ease-in duration-100  flex flex-col px-6">
+                              <div class="flex justify-start gap-4 ml-6 mb-2 items-center">
+                                <div><i class="fas fa-tachometer-alt text-3xl font-light text-secondary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">High Performance</h3>
+                              </div>                           
+                                <p class="ml-6">Our watches are designed to perform flawlessly under all conditions, offering durability, accuracy, and reliability</p>
+                            </div>
+                        </div>
+                        
+                     </div>
+                   
+                    <!-- =====================our feuatures================= -->
+                
+                </div>
+               </section>
+              <!-- =================section 2  the about section============= -->
+
+              <!-- =====================product section============== -->
+               <section class="font-mont px-2 lg:px-28 " id="product">
+                <div>
+                    <div class="container mx-auto py-8">
+                       
+                        <h2 class="text-4xl font-bold text-center mb-4">Our Exquisite Collections</h2>
+                        <p class="text-xl text-center text-gray-700 mb-12">Explore our range of Vintage, Smart, and Luxury Watches.</p>
+                
+                        <div class="flex justify-center mb-6">
+                            <button id="vintageBtn" class="px-4 py-2 mx-2 bg-secondary text-white rounded-md">Vintage</button>
+                            <button id="luxuryBtn" class="lux px-4 py-2 mx-2 bg-gray-200 text-primary  rounded-md">Luxury</button>
+                            <button id="smartBtn" class="lux sma px-4 py-2 mx-2 bg-gray-200  text-primary rounded-md">Smart</button>
+                        </div>
+                
+                        <div id="vintage" class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+                            <!-- Vintage Watch Boxes -->
+                            <div class="bg-white p-6 rounded-lg shadow-md text-primary">
+                                <img src="image/vintage1.jpg" alt="Vintage Watch 1" class="w-full  object-cover mb-4">
+                                <h2 class="text-xl font-bold">Heritage Elegance</h2>
+                                <p class="">$3,500</p>
+                                <button onclick="openPopup('Heritage Elegance', 'Vintage watch', ' A timeless design featuring a stainless steel case and a luxurious leather strap. Perfect for any occasion..', 'image/vintage1.jpg')" class="bg-primary text-white px-4 py-2 rounded">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="image/vintage2.jpg" alt="Vintage Watch 2" class="w-full object-cover mb-4">
+                                <h2 class="text-xl font-bold">Retro Prestige</h2>
+                                <p class="text-gray-600">$2,800</p>
+                                <button onclick="openPopup('Retro Prestige', 'Vintage watch', 'Description:The Retro Prestige Watch features a vintage design, precise timekeeping, a sleek leather strap, and a durable stainless steel case.', 'image/vintage2.jpg')" class="bg-primary text-white px-4 py-2 rounded ">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="image/vintage3.jpg" alt="Vintage Watch 3" class="w-full object-cover mb-4">
+                                <h2 class="text-xl font-bold">Classic Legacy</h2>
+                                <p class="text-gray-600">$4,200</p>
+                                <button onclick="openPopup('Classic Legacy', 'Vintage watch', 'Description: The Classic Legacy Watch combines timeless style with reliable performance, featuring a sophisticated design, leather strap, and durable stainless steel case.', 'image/vintage3.jpg')" class="bg-primary text-white px-4 py-2 rounded">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="image/vintage4.jpg" alt="Vintage Watch 4" class="w-full  object-cover mb-4">
+                                <h2 class="text-xl font-bold">Antique Majesty</h2>
+                                <p class="text-gray-600">$1020</p>
+                                <button onclick="openPopup('Antique Majesty', 'Vintage watch', 'This is The Antique Majesty Watch exudes timeless grandeur with its vintage-inspired design, luxurious leather strap, and robust stainless steel construction, embodying elegance and sophistication in every detail.a Rolex watch.', 'image/vintage4.jpg')" class="bg-primary text-white px-4 py-2 rounded">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="image/vintage5.jpg" alt="Vintage Watch 5" class="w-full  object-cover mb-4">
+                                <h2 class="text-xl font-bold">Vintage Splendor</h2>
+                                <p class="text-gray-600">$1000</p>
+                                <button onclick="openPopup('Vintage Splendor', 'Vintage watch', 'The Vintage Splendour Watch captures timeless allure with its retro-inspired design, crafted leather strap, and enduring stainless steel case, blending classic aesthetics with modern reliability..', 'image/vintage5.jpg')" class="bg-primary text-white px-4 py-2 rounded">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <img src="image/vintage6.jpg" alt="Vintage Watch 6" class="w-full  object-cover mb-4">
+                                <h2 class="text-xl font-bold">Retro Timepiece</h2>
+                                <p class="text-gray-600">$3500</p>
+                                <button onclick="openPopup('Retro Timepiece', 'Vintage watch', 'The Retro Timepiece Watch blends nostalgic charm with modern craftsmanship, boasting a vintage-inspired dial, a genuine leather band, and a durable stainless steel casing, embodying timeless sophistication and reliability.', 'image/vintage5.jpg')" class="bg-primary text-white px-4 py-2 rounded">View Details</button>
+
+                            </div>
+                        </div>
+                
+
+ <!-- Popup Window -->
+ <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center hidden justify-center z-30">
+    <div class="bg-white rounded-lg p-6 relative w-11/12 md:w-1/2">
+      <button onclick="closePopup()" class="absolute top-2 right-2 text-black text-2xl">&times;</button>
+      <img id="popupImage" src="" alt="Watch Image" class="w-full h-64 object-cover mb-4">
+      <h3 id="popupTitle" class="text-xl font-bold mb-2"></h3>
+      <p id="popupSubtitle" class="text-gray-600 mb-4"></p>
+      <p id="popupDescription" class="text-gray-800 font-bold"></p>
+<button  class="cart text-black font-medium rounded-lg text-sm px-8 py-3 text-center  border-2 border-black ">Add to Cart</button>
+
+    </div>
+  </div>
+
+
+
+                        <div id="luxury" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
+                            <!-- Luxury Watch Boxes -->
+                            <div class="vintage relative group overflow-hidden  bg-white p-6 rounded-lg shadow-md">
+                               
+                                    <div class="relative w-full h-64">
+                                        <img src="image/luxury1.jpg" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                        <img src="image/luxurya.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                    </div>
+                                <h2 class="text-xl font-bold">Omega Seamaster</h2>
+                                <p class="text-gray-600">$5000</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Omega Seamaster" data-price="$5000" data-description="The Omega Seamaster is known for its precision and elegance." data-image="image/luxury1.jpg">View Details</button>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/luxury2.avif" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/luxury2b.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Rolex Submarine</h2>
+                                <p class="text-gray-600">$6000</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details"  data-name="Rolex Submarine" data-price="$6000" data-description="The Rolex Submariner is an iconic dive watch, known for its durability and precision. It combines luxury with functionality, featuring a sleek design, robust construction, and exceptional water resistance, making it a favorite among divers and watch enthusiasts alike." data-image="image/luxury2.avif">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/luxury3.avif" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/luxury3c.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Patek Philippe Nautilus</h2>
+                                <p class="text-gray-600">$4000</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Patek Philippe Nautilus" data-price="$4000" data-description="The Patek Philippe Nautilus is renowned for its elegant porthole design and sporty luxury. It combines high-end materials with advanced watchmaking technology, making it a coveted piece for collectors." data-image="image/luxury3.Avif">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                        <img src="image/luxury4.avif" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                        <img src="image/luxury4a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                    </div>
+                                <h2 class="text-xl font-bold">Audemars Piguet Royal Oak</h2>
+                                <p class="text-gray-600">$5500</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Audemars Piguet Royal Oak" data-price="$5500" data-description=" The Audemars Piguet Royal Oak is celebrated for its iconic octagonal bezel and distinctive design. It blends luxury and sportiness, featuring high-end craftsmanship and precision, making it a timeless piece for watch enthusiasts" data-image="image/luxury4.Avif">View Details</button>
+                               .
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/luxury5.avif" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/luxury5a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Tag Heuer Carrera</h2>
+                                <p class="text-gray-600">$1200</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Tag Heuer Carrera" data-price="$1200" data-description=" The Tag Heuer Carrera is known for its sleek design and racing heritage. Combining precision, durability, and elegance, it stands out as a top choice for those who appreciate both functionality and style in a luxury watch" data-image="image/luxury5.Avif">View Details</button>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/luxury6.avif" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/luxury6a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Breitling Navitimer</h2>
+                                <p class="text-gray-600">$1300</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Breitling Navitimer" data-price="$1300" data-description=" The Tag Heuer Carrera is known for its sleek design and racing heritage. Combining precision, durability, and elegance, it stands out as a top choice for those who appreciate both functionality and style in a luxury watch" data-image="image/luxury6.Avif">View Details</button>
+                            </div>
+                        </div>
+                
+                        <div id="smart" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
+                            <!-- Smart Watch Boxes -->
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/smart1.jpg" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/smart1a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Alberto Pulse Pro</h2>
+                                <p class="text-gray-600">$500</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Alberto Pulse Pro" data-price="$500" data-description=" The Alberto Pulse Pro is a modern marvel, blending cutting-edge technology with timeless elegance. Featuring a sleek design, advanced fitness tracking, and superior craftsmanship, it caters to both the tech-savvy and the style-conscious, making it an essential accessory for any wardrobe." data-image="image/smart1.jpg">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/smart2.jpg" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/smart2a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Alberto Fusion</h2>
+                                <p class="text-gray-600">$350</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Alberto Fusion" data-price="$350" data-description="The Alberto Fusion combines classic design with modern innovation. It features a sophisticated aesthetic, high-quality materials, and precise engineering, making it a versatile and stylish choice for any occasion." data-image="image/smart2.jpg">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/smart3.jpg" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/smart3a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Alberto Syncro</h2>
+                                <p class="text-gray-600">$399</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Alberto Syncro" data-price="$399" data-description="
+                                The Alberto Syncro epitomizes harmony between tradition and technology. With its sleek design, robust functionality, and impeccable craftsmanship, it offers a seamless blend of classic elegance and modern convenience, perfect for the discerning watch enthusiast. " data-image="image/smart3.jpg">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/smart4.jpg" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/smart4a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>
+                                <h2 class="text-xl font-bold">Alberto Edge</h2>
+                                <p class="text-gray-600">$1500</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Alberto Edge" data-price="$1500" data-description="The Alberto Edge stands out with its bold design and cutting-edge features. Combining rugged durability with refined style, it offers superior performance and precision, making it an ideal choice for those who push the boundaries of adventure and fashion." data-image="image/smart4.jpg">View Details</button>
+                                
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/smart5.avif" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/smart5a.avif" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div>                            
+                                    <h2 class="text-xl font-bold">Alberto Vantage</h2>
+                                <p class="text-gray-600">$499</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Alberto Vantage" data-price="$499" data-description="The Alberto Vantage is a sophisticated smartwatch that blends timeless elegance with advanced technology. It features a sleek design, comprehensive fitness tracking, and seamless connectivity, making it the perfect companion for those who value both style and functionality." data-image="image/smart5.Avif">View Details</button>
+
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md vintage relative group overflow-hidden">
+                                <div class="relative w-full h-64">
+                                    <img src="image/smart6.avif" alt="Vintage Watch 1" class="vintage-img absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                                    <img src="image/smart6a.jpg" alt="Vintage Watch 1 Hover" class="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                </div> 
+                                <h2 class="text-xl font-bold">Alberto Zenith</h2>
+                                <p class="text-gray-600">$549</p>
+                                <button  class="bg-primary text-white px-4 py-2 rounded view-details" data-name="Alberto Zenith" data-price="$549" data-description="The Alberto Zenith is a state-of-the-art smartwatch that combines modern design with smart features. It offers robust health monitoring, intuitive interface, and superior craftsmanship, providing a perfect balance of innovation and luxury for the contemporary user." data-image="image/smart6.Avif">View Details</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </section>
+              <!-- =====================product section ended here============== -->
+
+
+<!--=========== Modal============= -->
+<div id="watch-modal" class="fixed font-mont inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-lg">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-2xl font-bold" id="modal-title">Watch Title</h2>
+            <button class="text-gray-600 hover:text-gray-900" id="modal-close">&times;</button>
+        </div>
+        <div class="p-4">
+            <img id="modal-image" src="" alt="Watch Image" class="w-full h-44 object-cover rounded-lg mb-4">
+            <p id="modal-description" class="text-gray-600 mb-4">Watch Description</p>
+            <p id="modal-price" class="text-gray-900 font-bold text-xl mb-4">Price</p>
+            <button class="bg-primary text-white px-4 py-2 rounded" id="add-to-cart">Add to Cart</button>
+            <p id="cart-message" class="text-green-600 font-bold mt-2 hidden">Successfully added to cart</p>
+        </div>
+    </div>
+</div>
+<!--=========== Modal============= -->
+
+
+        <!-- ============middle section===========  -->
+         <section class="py-10 font-mont">
+            <section class="promo-bg h-screen flex items-center justify-center text-white relative" style="background-image: url(image/section\ image1.jpg);background-size: cover;background-repeat: no-repeat;">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <div class="container mx-auto relative z-10 flex flex-col md:flex-row items-center justify-center">
+                  <!-- Text Div -->
+                  <!-- Text Div -->
+      <div class="text-center md:text-left md:w-1/2 p-8">
+        <h2 class="text-4xl font-bold mb-4">Deals of the Day</h2>
+        <div class="text-2xl font-semibold mb-4">
+          <div id="countdown" class="flex items-center justify-center space-x-4">
+            <div class="flex flex-col items-center">
+              <span id="days" class="text-4xl font-bold text-white">00</span>
+              <span class="text-sm text-white">Days</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span id="hours" class="text-4xl font-bold text-white">00</span>
+              <span class="text-sm text-white">Hours</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span id="minutes" class="text-4xl font-bold text-white">00</span>
+              <span class="text-sm text-white">Minutes</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span id="seconds" class="text-4xl font-bold text-white">00</span>
+              <span class="text-sm text-white">Seconds</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-lg text-gray-300 my-4 text-center">Don't miss out on our limited-time offers! <br> Shop now and save big.</p>
+        <button class="bg-primary text-white px-6 py-3 rounded-lg shadow-lg hover:bg-secondary transition duration-300">View Details</button>
+      </div>
+                  <!-- Image Div -->
+                  <div class="md:w-1/2 p-8 flex watch overflow-hidden">
+                    <img src="image/section watch.png" alt="Product" class=" object-cover rounded-lg shadow-lg">
+                  </div>
+                </div>
+              </section>
+         </section>
+        <!-- ============middle section ============= -->
+
+
+        <!--===================== new ARRIVALS section=============== -->
+        <!-- New Arrivals Section -->
+<section class="py-12 bg-gray-100 font-mont">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-6"><span class="text-secondary">New</span> Arrivals</h2>
+        <p class="text-center text-gray-600 mb-12">Discover the latest additions to our collection</p>
+        
+        <div id="new-arrivals" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Watch Box 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md relative overflow-hidden group">
+                <div class="relative w-full h-64 mb-4">
+                    <img src="image/arrivals1.png" alt="Watch 1" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 flex flex-col items-end justify-center space-y-2 p-2 transition-transform duration-300 transform translate-x-full group-hover:translate-x-0">
+                        <button class="add-to-cart bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-blue-700" data-name="Rolex Datejust" data-price="$7000" data-image="image/arrivals1.png" data-description="The Rolex Datejust is the classic watch of reference.">🛒</button>
+                        <button class="wishlist bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-red-700">❤️</button>
+                        <button class="favorite bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-yellow-700">⭐</button>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Rolex Datejust</h3>
+                <p class="text-gray-600 mb-2">$7000</p>
+                <div class="flex items-center mb-4">
+                    <span class="text-secondary">★★★★★</span>
+                </div>
+                <button class="view-details bg-primary text-white px-4 py-2 rounded" data-name="Rolex Datejust" data-price="$7000" data-description="The Rolex Datejust is the classic watch of reference." data-image="image/arrivals1.png">See Details</button>
+            </div>
+            <!-- Repeat Watch Box for other items -->
+            <!-- Watch Box 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md relative overflow-hidden group">
+                <div class="relative w-full h-64 mb-4">
+                    <img src="image/arrivals2.avif" alt="Watch 2" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 flex flex-col items-end justify-center space-y-2 p-2 transition-transform duration-300 transform translate-x-full group-hover:translate-x-0">
+                        <button class="add-to-cart bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-blue-700" data-name="Omega Speedmaster" data-price="$8000" data-image="image/arrivals2.avif" data-description="The Omega Speedmaster is a legendary timepiece.">🛒</button>
+                        <button class="wishlist bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-red-700">❤️</button>
+                        <button class="favorite bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-yellow-700">⭐</button>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Omega Speedmaster</h3>
+                <p class="text-gray-600 mb-2">$8000</p>
+                <div class="flex items-center mb-4">
+                    <span class="text-secondary">★★★★★</span>
+                </div>
+                <button class="view-details bg-primary text-white px-4 py-2 rounded" data-name="Omega Speedmaster" data-price="$8000" data-description="The Omega Speedmaster is a legendary timepiece." data-image="image/arrivals2.avif">See Details</button>
+            </div>
+            <!-- Watch Box 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md relative overflow-hidden group">
+                <div class="relative w-full h-64 mb-4">
+                    <img src="image/arrivals3.webp" alt="Watch 3" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 flex flex-col items-end justify-center space-y-2 p-2 transition-transform duration-300 transform translate-x-full group-hover:translate-x-0">
+                        <button class="add-to-cart bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-blue-700" data-name="Patek Philippe" data-price="$9000" data-image="image/arrivals3.webp" data-description="The Patek Philippe is a masterpiece of horology.">🛒</button>
+                        <button class="wishlist bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-red-700">❤️</button>
+                        <button class="favorite bg-primary text-white p-2 rounded-full transition-transform duration-300 hover:bg-yellow-700">⭐</button>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Patek Philippe</h3>
+                <p class="text-gray-600 mb-2">$9000</p>
+                <div class="flex items-center mb-4">
+                    <span class="text-secondary">★★★★★</span>
+                </div>
+                <button class="view-details bg-primary text-white px-4 py-2 rounded" data-name="Patek Philippe" data-price="$9000" data-description="The Patek Philippe is a masterpiece of horology." data-image="image/arrivals3.webp">See Details</button>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <button id="load-more" class="bg-primary text-white px-8 py-2 rounded">Load More</button>
+        </div>
+    </div>
+</section>
+
+
+   <!-- Load More Container -->
+    <section class="px-20 bg-[#F3F4F6] my-4 font-mont">
+        <div id="load-more-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6 hidden ">
+             <!-- Ne\\Watches will be appended here -->
+        </div>
+    </section>
+  
+<!-- Modal -->
+<div id="watch-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden font-mont">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-lg">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-2xl font-bold" id="modal-title">Watch Title</h2>
+            <button class="text-gray-600 hover:text-gray-900" id="modal-close">&times;</button>
+        </div>
+        <div class="p-4">
+            <img id="modal-image" src="" alt="Watch Image" class="w-full h-64 object-cover rounded-lg mb-4">
+            <p id="modal-description" class="text-gray-600 mb-4">Watch Description</p>
+            <p id="modal-price" class="text-gray-900 font-bold text-xl mb-4">Price</p>
+            <button class="bg-primary text-white px-4 py-2 rounded" id="add-to-cart-modal">Add to Cart</button>
+            <p id="cart-message" class="text-green-600 font-bold mt-2 hidden">Successfully added to cart</p>
+        </div>
+    </div>
+</div>
+
+        <!--===================== new ARRIVALS section=============== -->
+
+        <!-- ======================technology section=================== -->
+
+        <!-- ======================technology section=================== -->
+        <section class="md:px-16 sm:px-8 bg-primary py-10" id="technology">
+            <div class="text-center mb-12 text-white ">
+                <h2 class="text-4xl font-bold animate-fade-in">Innovative Technology</h2>
+                <p class="mt-4 text-xl text-white animate-fade-in">Discover the advanced technology that powers our timepieces</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-primary">
+                <div class="tech-feature p-6 bg-white  rounded-lg shadow-lg animate-slide-up">
+                    <div class="flex mb-4">
+                      <img src="image/tech1.jpg" alt="Precision Engineering" class="rounded-full  w-24 h-24">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Precision Engineering</h3>
+                    <p class="">Our watches are crafted with the utmost precision to ensure accurate timekeeping down to the millisecond.</p>
+                  </div>
+                  <div class="tech-feature p-6 bg-white rounded-lg shadow-lg animate-slide-up">
+                    <div class="flex mb-4">
+                      <img src="image/tech2.jpg" alt="Technology Feature 2" class="rounded-full w-24 h-24">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Advanced Materials</h3>
+                    <p class="">Using the latest materials, including sapphire crystal and ceramic, our watches are both durable and stylish.</p>
+                  </div>
+
+                  <div class="tech-feature p-6 bg-white  rounded-lg shadow-lg animate-slide-up">
+                    <div class="flex  mb-4">
+                      <img src="image/tech3.jpg" alt="Technology Feature 3" class="rounded-full h-24 w-24">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Water Resistance</h3>
+                    <p class="">Our watches are engineered to withstand water pressure, making them perfect for any adventure.</p>
+                  </div>
+                   <!-- Technology Feature 4 -->
+        <div class="tech-feature p-6 bg-white rounded-lg shadow-lg animate-slide-up">
+          <div class="flex mb-4">
+            <img src="image/tech4.jpg" alt="Technology Feature 4" class="rounded-full h-24 w-24">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Smart Connectivity</h3>
+          <p class="">Stay connected with our smart features that sync with your smartphone for notifications and more.</p>
+        </div>
+          <!-- Technology Feature 5 -->
+        <div class="tech-feature p-6 bg-white rounded-lg shadow-lg animate-slide-up">
+          <div class="flex mb-4">
+            <img src="image/tech5.avif" alt="Technology Feature 5" class="rounded-full h-24 w-24">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Eco-Friendly Power</h3>
+          <p class="text-gray-400">Our solar-powered watches offer sustainable and eco-friendly timekeeping solutions.</p>
+        </div>
+          <!-- Technology Feature 6 -->
+        <div class="tech-feature p-6 bg-white rounded-lg shadow-lg animate-slide-up">
+          <div class="flex mb-4">
+            <img src="image/tech6.jpg" alt="Technology Feature 6" class="rounded-full h-24 w-24">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Luminous Dials</h3>
+          <p class="text-gray-400">Our luminous dials ensure you can read the time even in low-light conditions.</p>
+        </div>
+
+        
+                <div>
+               
+                         <!-- Technology Feature 3 -->
+                 
+
+                </div>
+              </div>
+        </section>
+        <!-- ======================technology section=================== -->
+
+        <!-- ====================store section =============== -->
+           <!-- Store Section -->
+    <section class="store-section py-20 bg-gray-900 text-white" id="store">
+        <div class="container mx-auto px-6 lg:px-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold animate-slide-in">Welcome to Our Exclusive Watch Store</h2>
+                <p class="mt-4 text-xl text-gray-400 animate-slide-in">Discover our exclusive range of watches</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div id="watch1" class="product relative group bg-white p-4 rounded-lg shadow-md overflow-hidden animate-slide-in">
+                    <div class="relative w-full h-48 mb-4 overflow-hidden">
+                        <img src="image/store1.avif" alt="Omega Seamaster"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center  bg-gray-900 bg-opacity-75 opacity-0 transition-opacity duration-300 group-hover:opacity-75">
+                          
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Omega Seamaster</h3>
+                    <p class="text-gray-600 mb-2">$5000</p>
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="ml-2 text-gray-600">(120 reviews)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button onclick="addToCart('Omega Seamaster', 5000, 'image/store1.avif')" class="bg-primary text-white px-4 py-2 rounded">Add to Cart</button>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-800 text-white p-2 rounded-full june">
+                                <i class="fas fa-heart june"></i>
+                            </button>
+                            <button class="bg-gray-800 text-white p-2 rounded-full">
+                                <i class="fas fa-star"></i>
+                            </button>
+                         
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar blocks for Product 2, 3, ... -->
+                <!-- Product 2 -->
+                <div id="watch2" class="product relative group bg-white p-4 rounded-lg shadow-md overflow-hidden animate-slide-in">
+                    <div class="relative w-full h-48 mb-4 overflow-hidden">
+                        <img src="image/store2.jpg" alt="Rolex Submarine"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 opacity-0 transition-opacity duration-300 group-hover:opacity-75">
+                         
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Rolex Submarine</h3>
+                    <p class="text-gray-600 mb-2">$6000</p>
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="ml-2 text-gray-600">(150 reviews)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button onclick="addToCart('Rolex Submarine', 6000, 'image/store2.jpg')" class="bg-primary text-white px-4 py-2 rounded">Add to Cart</button>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-800 text-white p-2 rounded-full june">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="bg-gray-800 text-white p-2 rounded-full">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div id="watch3" class="product relative group bg-white p-4 rounded-lg shadow-md overflow-hidden animate-slide-in">
+                    <div class="relative w-full h-48 mb-4 overflow-hidden">
+                        <img src="image/store3.jpg" alt="Patek Philippe Nautilus"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 opacity-0 transition-opacity duration-300 group-hover:opacity-75">
+
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Patek Philippe Nautilus</h3>
+                    <p class="text-gray-600 mb-2">$7000</p>
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="ml-2 text-gray-600">(200 reviews)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button onclick="addToCart('Patek Philippe Nautilus', 7000, 'image/store3.jpg')" class="bg-primary text-white px-4 py-2 rounded">Add to Cart</button>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-800 text-white p-2 rounded-full june">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="bg-gray-800 text-white p-2 rounded-full">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div id="watch4" class="product relative group bg-white p-4 rounded-lg shadow-md overflow-hidden animate-slide-in">
+                    <div class="relative w-full h-48 mb-4 overflow-hidden">
+                        <img src="image/store4.jpg" alt="Tag Heuer Carrera"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 opacity-0 transition-opacity duration-300 group-hover:opacity-75">
+                           
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Tag Heuer Carrera</h3>
+                    <p class="text-gray-600 mb-2">$8000</p>
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="ml-2 text-gray-600">(180 reviews)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button onclick="addToCart('Tag Heuer Carrera', 8000, 'image/store4.jpg')" class="bg-primary text-white px-4 py-2 rounded">Add to Cart</button>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-800 text-white p-2 rounded-full june">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="bg-gray-800 text-white p-2 rounded-full">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div id="watch5" class="product relative group bg-white p-4 rounded-lg shadow-md overflow-hidden animate-slide-in">
+                    <div class="relative w-full h-48 mb-4 overflow-hidden">
+                        <img src="image/store5.avif" alt="Breitling Navitimer"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 opacity-0 transition-opacity duration-300 group-hover:opacity-75">
+
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Breitling Navitimer</h3>
+                    <p class="text-gray-600 mb-2">$9000</p>
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="ml-2 text-gray-600">(220 reviews)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button onclick="addToCart('Breitling Navitimer', 9000, 'image/store5.avif')" class="bg-primary text-white px-4 py-2 rounded">Add to Cart</button>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-800 text-white p-2 rounded-full june">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="bg-gray-800 text-white p-2 rounded-full">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div id="watch6" class="product relative group bg-white p-4 rounded-lg shadow-md overflow-hidden animate-slide-in">
+                    <div class="relative w-full h-48 mb-4 overflow-hidden">
+                        <img src="image/store6.jpg" alt="Cartier Santos"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 opacity-0 transition-opacity duration-300 group-hover:opacity-75">
+
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Cartier Santos</h3>
+                    <p class="text-gray-600 mb-2">$10000</p>
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="ml-2 text-gray-600">(250 reviews)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button onclick="addToCart('Cartier Santos', 10000, 'image/store6.jpg')" class="bg-primary text-white px-4 py-2 rounded">Add to Cart</button>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-800 text-white p-2 rounded-full june">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="bg-gray-800 text-white p-2 rounded-full">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Template -->
+    <div id="modal-template" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg relative">
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600">&times;</button>
+            <div id="watch-details-content">
+                <!-- Dynamic Content Here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl relative cart-modal">
+            <button onclick="closeCart()" class="absolute top-2 right-2 text-gray-600">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
+            <div id="cart-items">
+                <!-- Dynamic Cart Items Here -->
+            </div>
+            <div class="mt-4 flex justify-between items-center">
+                <p class="text-xl font-bold">Total: $<span id="cart-total">0</span></p>
+                <button onclick="checkout()" class="bg-primary text-white px-4 py-2 rounded">Checkout</button>
+            </div>
+        </div>
+    </div>
+        <!-- ====================store section =============== -->
+
+        <!-- =============support section ================= -->
+         <!-- Support Section -->
+<section id="support" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 md:px-12">
+        <!-- Heading -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-primary mb-4">Customer Support</h2>
+            <p class="text-lg text-gray-600">We're here to help you with any questions or concerns.</p>
+        </div>
+        <!-- Contact Options -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Contact Card -->
+            <div class="support-card p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="icon mb-4">
+                    <svg class="w-12 h-12 text-primary mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13" />
+                        <path d="M22 2L15 22l-4-9-9-4 22-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Email Support</h3>
+                <p class="text-gray-600 mb-4">Reach out to us via email for any assistance you need.</p>
+                <a href="mailto:support@albertowatch.com" class="text-primary font-semibold hover:underline">support@albertowatch.com</a>
+            </div>
+            <!-- Phone Support Card -->
+            <div class="support-card p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="icon mb-4">
+                    <svg class="w-12 h-12 text-primary mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13" />
+                        <path d="M22 2L15 22l-4-9-9-4 22-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Phone Support</h3>
+                <p class="text-gray-600 mb-4">Give us a call for immediate assistance with your queries.</p>
+                <a href="tel:+8068078495" class="text-primary font-semibold hover:underline">+234 806 807 8495</a>
+            </div>
+            <!-- Chat Support Card -->
+            <div class="support-card p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="icon mb-4">
+                    <svg class="w-12 h-12 text-primary mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13" />
+                        <path d="M22 2L15 22l-4-9-9-4 22-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Live Chat</h3>
+                <p class="text-gray-600 mb-4">Chat with our support team for real-time assistance.</p>
+                <a href="#" class="text-primary font-semibold hover:underline">Start Live Chat</a>
+            </div>
+        </div>
+        <!-- Support Form -->
+        <div class=" p-8 bg-white rounded-lg shadow-lg ">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+            <form id="contactForm" action="#" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-600 mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    <p id="nameError" class="text-red-500 text-sm hidden">Please enter a valid name (letters only).</p>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-600 mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-600 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-primary text-black hover:text-white px-6 py-3 rounded-lg shadow-lg hover:bg-secondary transition duration-300">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+        <!-- =============support section ================= -->
+
+        <!-- ==============gallery section=============== -->
+         <section id="gallery">
+           
+                <div class="py-12 font-mont lg:px-20 xm:px-2">
+                    <div class="container mx-auto text-center">
+                        <h2 class="text-4xl font-bold mb-6">Timeless Elegance: Explore the Alberto Gallery</h2>
+                        <p class="text-lg mb-12 md:text-center md:px-20 px-2">Welcome to our exquisite gallery, where each watch tells a story of unparalleled craftsmanship and timeless elegance. The Alberto Collection is a celebration  of sophistication and style, meticulously designed for those who appreciate the finer things in life.</p>
+            
+                      <div class="grid grid-cols-12 gap-6">
+                        <div class="md:col-span-6 col-span-12">
+                            
+
+<div id="custom-controls-gallery" class="relative w-full shadow-lg shadow-primary" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery1.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="image/gallery2.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery3.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery4.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery5.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+    </div>
+    <div class="flex justify-center items-center pt-4">
+        <button type="button" class="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="flex justify-center items-center h-full cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+</div>
+
+                        </div>
+                        <div class="md:col-span-6 col-span-12">
+                            
+
+<div id="custom-controls-gallery" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery6.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="image/gallery10.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery7.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery8.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="image/gallery9.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+    </div>
+    <div class="flex justify-center items-center pt-4">
+        <button type="button" class="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="flex justify-center items-center h-full cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+</div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+         </section>
+        <!-- ==============gallery section=============== -->
+
+        <!-- =================contact section ============ -->
+        <section class="py-12 sm:px-6 md:px-20 font-mont" id="contact us">
+            <div class="container mx-auto text-center max-w-screen-lg p-2">
+                <h2 class="text-4xl font-bold mb-4">Get in Touch with Us</h2>
+                <p class="text-lg mb-8 text-center">We're here to assist you with any inquiries or support you need. Reach out to us <br>
+                     and we’ll respond as soon as we can.</p>
+    
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-custom mx-auto">
+                    
+                    <!-- Map Box -->
+                    <div class="bg-primary opacity-50 p-6 rounded-lg shadow-lg overflow-hidden">
+                        
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126799.94336654936!2d3.093708743359384!3d6.708883700000023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b995b41b7dd6d%3A0xb6c08985374e0e09!2sAptech%20Computer%20Education%20-Sango%20Ota!5e0!3m2!1sen!2sng!4v1719781700714!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      
+                       
+                     
+                    </div>
+    
+                    <!-- Contact Form Box -->
+                    <div class="shadow-primary rounded-lg shadow-lg p-6">
+                        <form id="contact-form" method="POST" action="https://formspree.io/f/mjkbvqvj">
+                            <div class="mb-4">
+                                <label for="name" class="block text-left font-medium mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded" required>
+                                <p class="text-red-500 text-sm mt-1 hidden" id="name-error">Please enter your full name.</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-left font-medium mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded" required>
+                                <p class="text-red-500 text-sm mt-1 hidden" id="email-error">Please enter a valid email address.</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-left font-medium mb-1">Message</label>
+                                <textarea id="message" name="message" class="w-full px-3 py-2 border rounded h-32" required></textarea>
+                                <p class="text-red-500 text-sm mt-1 hidden" id="message-error">Please enter your message.</p>
+                            </div>
+                            <div class="text-left">
+                                <button type="submit" class="border border-secondary text-primary px-4 py-2 rounded">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+    
+        <!-- ==================contact section ============= -->
+
+        <!-- footer section  -->
+         <div>
+            <footer class="bg-primary text-white py-12">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        <!-- Company Overview -->
+                        <div>
+                            <h5 class="text-secondary footer-heading mb-4">Alberto Watches</h5>
+                            <p class=" footer-subheading mb-4">
+                                Alberto Watches is a premier luxury watch brand, known for its precision, elegance, and craftsmanship. Explore our exquisite collection today.
+                            </p>
+                            <p class=" footer-subheading">&copy; 2024 Alberto Watches. All rights reserved.</p>
+                        </div>
+                        
+                        <!-- Sitemap -->
+                        <div id="site-map">
+                            <h5 class="text-secondary footer-heading mb-4">Site Map</h5>
+                            <ul class="space-y-2">
+                                <li><a href="#home" class="footer-link hover:underline">Home</a></li>
+                                <li><a href="#about" class="footer-link hover:underline">About</a></li>
+                                <li><a href="#product" class="footer-link hover:underline">Product</a></li>
+                                <li><a href="#technology" class="footer-link hover:underline">Technology</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Quick Links -->
+                        <div>
+                            <h5 class="text-secondary footer-heading mb-4">Quick Links</h5>
+                            <ul class="space-y-2">
+                                <li><a href="#store" class="footer-link hover:underline">Store Locator</a></li>
+                                <li><a href="#support" class="footer-link hover:underline">Support</a></li>
+                                <li><a href="#gallery" class="footer-link hover:underline">Gallery</a></li>
+                                <li><a href="#contact us" class="footer-link hover:underline">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <div>
+                            <h5 class="text-secondary footer-heading mb-4">Contact Us</h5>
+                            <p class="text-white footer-subheading">123 Luxury Avenue, Suite 100</p>
+                            <p class="text-white footer-subheading">sango ota ogun state</p>
+                            <p class="text-white footer-subheading">Phone: (123) 456-7890</p>
+                            <p class="text-white footer-subheading">Email: support@albertowatches.com</p>
+                        </div>
+                    </div>
+        
+                    <div class="mt-8 flex justify-center md:justify-end">
+                        <a href="#facebook" class=" hover:text-secondary mx-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.676 0H1.324A1.324 1.324 0 000 1.324v21.352A1.324 1.324 0 001.324 24h11.494V14.711h-3.122v-3.623h3.122V8.41c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.794.143v3.24l-1.917.001c-1.504 0-1.794.715-1.794 1.764v2.312h3.587l-.467 3.623h-3.12V24h6.116A1.324 1.324 0 0024 22.676V1.324A1.324 1.324 0 0022.676 0z"/>
+                            </svg>
+                        </a>
+                        <a href="#twitter" class=" hover:text-secondary mx-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.954 4.569a9.992 9.992 0 01-2.825.775 4.934 4.934 0 002.163-2.724 9.984 9.984 0 01-3.127 1.184 4.928 4.928 0 00-8.391 4.482 13.988 13.988 0 01-10.156-5.15 4.929 4.929 0 001.524 6.574 4.904 4.904 0 01-2.228-.616c-.054 2.18 1.524 4.205 3.77 4.658a4.936 4.936 0 01-2.224.084 4.93 4.93 0 004.604 3.416 9.893 9.893 0 01-7.302 2.034 13.993 13.993 0 007.548 2.209c9.057 0 14.009-7.496 14.009-13.986 0-.21-.004-.42-.015-.63A10.025 10.025 0 0024 4.557z"/>
+                            </svg>
+                        </a>
+                        <a href="#instagram" class="text-white hover:text-secondary mx-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C8.74 0 8.332.014 7.053.072 5.775.131 4.666.416 3.687.878 2.708 1.34 1.886 1.963 1.21 2.64.533 3.316-.09 4.137-.552 5.116c-.463.98-.747 2.088-.806 3.367C-.014 9.74 0 10.148 0 12c0 1.852-.014 2.26-.072 3.54-.059 1.28-.343 2.387-.806 3.366-.462.98-1.086 1.802-1.762 2.48-.677.676-1.498 1.3-2.478 1.762-.98.463-2.088.747-3.366.806C2.26 23.986 1.852 24 0 24c1.852 0 2.26-.014 3.54-.072 1.28-.059 2.387-.343 3.366-.806.98-.462 1.802-1.086 2.48-1.762.676-.677 1.3-1.498 1.762-2.478.463-.98.747-2.088.806-3.366.059-1.28.072-1.688.072-3.54 0-1.852-.014-2.26-.072-3.54-.059-1.28-.343-2.387-.806-3.366-.462-.98-1.086-1.802-1.762-2.48-.676-.676-1.498-1.3-2.478-1.762-.98-.462-2.088-.747-3.366-.806C2.26.014 1.852 0 0 0zM12 5.838c3.403 0 6.162 2.759 6.162 6.162S15.403 18.162 12 18.162 5.838 15.403 5.838 12 8.597 5.838 12 5.838zm6.406-3.01a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88zM12 7.38A4.623 4.623 0 107.38 12 4.623 4.623 0 0012 7.38zm0 7.62a2.997 2.997 0 110-5.994 2.997 2.997 0 010 5.994z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        
+        
+         </div>
+        <!-- footer section  -->
+
+        <div class="loader"></div>
+
+ <!-- Ticker Section -->
+ <div class="ticker bg-primary py-2 z-30 flex items-center ">
+ <div id="tickerText" class="ticker-text"></div>
+  </div>
+  <!-- Ticker Section -->
+    <!--======================== navbar============= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="main.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
